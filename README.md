@@ -20,8 +20,8 @@ The supplied vectors use definite-length CBOR maps, deterministic key ordering b
 ### Review gates
 
 Before adoption or registry publication, confirm: 
-(1) actual VTO fields and optionality, 
-(2) actual encoder bytes from libp2p, 
-(3) measurement semantics and float policy, 
-(4) the selected AAC binding model, and 
-(5) a registered or otherwise agreed typed digest-context identifier.
+* (1) actual VTO fields and optionality, 
+* (2) actual encoder bytes from libp2p, 
+* (3) measurement semantics and float policy, 
+* (4) the selected AAC binding model, and 
+* (5) a registered or otherwise agreed typed digest-context identifier.
