@@ -1,4 +1,4 @@
-### VTO (Verified Telemetry Object): Draft Integration Materials
+### VTO (Verified Telemetry Object): Integration Materials
 
 **Status:** Draft integration materials.
 
