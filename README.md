@@ -6,12 +6,12 @@ This repository packages proposed VTO schema, digest-context requirements, AAC i
 
 ### Contents
 
-- `vto-schema.cddl.md` — proposed field-level CDDL
-- `vto-example-bytes.md` — deterministic VTO test vector and SHA-256 multihash
-- `vto-float-fields.md` — float-handling requirements
-- `cbor-digest-context-requirements.md` — digest-context requirements note
-- `.github/` — issue/PR templates and CI workflow
-- `testdata/` — machine-readable vectors
+- `vto-schema.cddl.md`: proposed field-level CDDL
+- `vto-example-bytes.md`: deterministic VTO test vector and SHA-256 multihash
+- `vto-float-fields.md`: float-handling requirements
+- `cbor-digest-context-requirements.md`: digest-context requirements note
+- `.github/`: issue/PR templates and CI workflow
+- `testdata/`: machine-readable vectors
 
 ### Encoding contract
 
