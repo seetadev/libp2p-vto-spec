@@ -1,0 +1,9 @@
+{
+  "node_id": "12D3KooWR5vD7vG7zQj8xqJ8xqJ8xqJ8xqJ8xqJ8xqJ8xqJ8",
+  "timestamp": 1725280000,
+  "jitter_ms": 3.8125,
+  "latency_ms": 42.375,
+  "packet_loss": 0.00125,
+  "region": "us-east-1",
+  "throughput_mbps": 987.625
+}

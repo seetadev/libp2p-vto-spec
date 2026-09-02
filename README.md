@@ -1,32 +1,22 @@
+# VTO (Verified Telemetry Object) — Draft Integration Materials
 
-# Getting Started
+**Status:** Draft integration materials; not an official libp2p specification or a claim of current production behavior.
 
-This package provides draft VTO digest-context materials and deterministic test vectors. It is intended for review and integration planning, not as a claim of current libp2p production output.
+This repository packages proposed VTO schema, digest-context requirements, AAC integration templates, CI scaffolding, and deterministic CBOR test vectors. The VTO field names, semantic definitions, and production-byte claims must be confirmed by the libp2p profile owner before registry publication.
 
-## Quick start
+## Contents
 
-1. Clone the repo and open a terminal in the root.
-2. Run the bootstrap script to validate vectors:
-   ```bash
-   bash scripts/bootstrap.sh
-   ```
-3. Run a local conformance check:
-   ```bash
-   python tools/check_vto_conformance.py --cbor testdata/vto_only_example.cbor.hex --multihash testdata/vto_only_example.multihash.hex
-   python tools/check_vto_conformance.py --cbor testdata/vto_aac_example.cbor.hex --multihash testdata/vto_aac_example.multihash.hex
-   ```
-4. Review the spec drafts:
-   - `vto-schema.cddl.md`
-   - `vto-float-fields.md`
-   - `vto-example-bytes.md`
-   - `cbor-digest-context-requirements.md`
+- `vto-schema.cddl.md` — proposed field-level CDDL
+- `vto-example-bytes.md` — deterministic VTO test vector and SHA-256 multihash
+- `vto-float-fields.md` — float-handling requirements
+- `cbor-digest-context-requirements.md` — digest-context requirements note
+- `.github/` — issue/PR templates and CI workflow
+- `testdata/` — machine-readable vectors
 
-## Next steps
+## Encoding contract
 
-- Open a discussion issue using `.github/ISSUE_TEMPLATE/vto-aac-discussion.md` to finalize the AAC binding model and digest scope.
-- After agreement, implement the AAC emitter in Go and Python and open a PR using `.github/pull_request_template.md`.
-- Extend CI with additional vectors and negative tests as the design evolves.
+The supplied vectors use definite-length CBOR maps, deterministic key ordering by encoded-key bytes, IEEE 754 binary64 floats, and SHA-256 multihashes over the raw CBOR item. Do not describe this as a CBOR tag-42 profile: tag 42 is the CID tag, while DAG-CBOR is a distinct IPLD codec/profile.
 
-## Important notice
+## Review gates
 
-These artifacts are draft and require explicit libp2p profile-owner confirmation before any registry publication or normative claims.
+Before adoption or registry publication, confirm: (1) actual VTO fields and optionality, (2) actual encoder bytes from libp2p, (3) measurement semantics and float policy, (4) the selected AAC binding model, and (5) a registered or otherwise agreed typed digest-context identifier.

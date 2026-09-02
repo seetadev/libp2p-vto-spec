@@ -1,0 +1,31 @@
+name: VTO CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  vectors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify stored VTO vector digest
+        run: |
+          python - <<'PY'
+          from hashlib import sha256
+          from pathlib import Path
+          raw = bytes.fromhex(Path('testdata/vto_only_example.cbor.hex').read_text().strip())
+          actual = '1220' + sha256(raw).hexdigest()
+          expected = Path('testdata/vto_only_example.multihash.hex').read_text().strip()
+          assert actual == expected, (actual, expected)
+          raw = bytes.fromhex(Path('testdata/vto_aac_example.cbor.hex').read_text().strip())
+          actual = '1220' + sha256(raw).hexdigest()
+          expected = Path('testdata/vto_aac_example.multihash.hex').read_text().strip()
+          assert actual == expected, (actual, expected)
+          PY
+      - name: Verify no unresolved placeholders
+        run: |
+          ! grep -R --line-number --fixed-string '<replace-with' .
