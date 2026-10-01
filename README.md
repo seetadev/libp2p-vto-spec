@@ -633,9 +633,7 @@ Keeping these layers separate is important for maintaining composability and int
 
 # Status and Scope
 
-**Experimental / Initial Working Draft**
-
-This repository does **not** currently represent a finalized standard or production-ready interoperability profile.
+**Working Draft**
 
 The schemas, encoding profiles, digest contexts, measurement semantics, AAC integration, and verification mechanisms are expected to evolve through:
 
