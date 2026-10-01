@@ -1,4 +1,4 @@
-### VTO (Verified Telemetry Object): Integration Materials
+### VTO (Verified Telemetry Object) using libp2p, CBOR, Unix-FS and IPFS
 
 **Status:** Draft integration materials.
 
